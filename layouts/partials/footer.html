@@ -1,0 +1,24 @@
+<div class="footer-container">
+	<div class="footer-content">
+		{{ $list := ($.Site.GetPage "taxonomyTerm" "categories").Pages }}
+		{{ if gt (len $list) 0 }}
+		<div class="category-list">
+			<h2>Categories</h2>
+			<p>
+				{{ range $list }}
+				<a href="{{ .Permalink }}">#{{ .Title }}</a>   
+				{{ end }}
+			</p>
+		
+		{{ end }}
+			<h2>Explore the indie web</h2>
+		</div>
+		<div class="webring">
+		  <a href="https://xn--sr8hvo.ws/%E2%9E%A1%EF%B8%8F%F0%9F%92%82%F0%9F%9B%8B/previous">←</a>
+		  An <a href="https://xn--sr8hvo.ws">IndieWeb Webring</a> 🕸💍
+		  <a href="https://xn--sr8hvo.ws/%E2%9E%A1%EF%B8%8F%F0%9F%92%82%F0%9F%9B%8B/next">→</a> |  <a href="#" target="_blank" class="tinylytics_webring">Tinylytics Webring 🕸️<img class="tinylytics_webring_avatar" src="" style="display: none"/>💍 →
+		</a>
+		</div>
+	</div>
+	
+</div>

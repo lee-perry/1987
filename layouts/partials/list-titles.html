@@ -1,0 +1,18 @@
+<div class="archive-container">
+{{ $list := (where .Pages "Type" "post") }}
+{{ range $list }}
+
+	<div class="archive-date"><span class="dt-published" datetime="{{ .Date.Format "2006-01-02T15:04:05-0700" }}">{{ .Date.Format "02 Jan 2006" }}</span></div> 
+	
+	{{ if .Title }}
+	<div class="archive-content"><span class="p-name"><a href="{{ .Permalink }}" class="u-url">{{ .Title }}</a></span><span class="p-taxonomies">{{ if isset .Params "categories" }}    
+		  {{ range .Params.categories }}{{ $href := print (absURL "categories/") (urlize .) }}
+		<a href="{{ $href }}" class="u-url date">#{{ . }}</a> {{ end }}{{ end }} </span></div>
+		{{ else }}
+	<div class="archive-content"><span class="p-name"><a href="{{ .Permalink }}" class="u-url"><strong>micropost ></strong> {{ .Summary | safeHTML | truncate 40 }}</a></span><span class="p-taxonomies">{{ if isset .Params "categories" }}    
+	  {{ range .Params.categories }}{{ $href := print (absURL "categories/") (urlize .) }}
+	<a href="{{ $href }}" class="u-url date">#{{ . }}</a> {{ end }}{{ end }} </span></div>	
+
+{{ end }}
+{{ end }}
+</div>

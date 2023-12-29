@@ -1,0 +1,24 @@
+<div class="hero">
+	<div class="hero-content">
+		{{ if .Title }}
+		<h1>{{ .Title }}</h1>
+		{{ else }}
+		<h1>Micropost</h1>
+		{{ end }}
+		{{ partial "subtitles.html" . }}
+		{{ if .Param "post_id" }}
+		<p>
+		<span datetime="{{ .Date.Format "2006-01-02T15:04:05-0700" }}">Published {{ .Date.Format "02 Jan 2006 at 15:04pm" }}</span>
+		{{ end }}
+		
+		{{ if .Params.categories }} <span> in 
+			{{ range .Params.categories }} {{ $href := print (absURL "categories/") (urlize .) }}
+			<a class="dark" href="{{ $href }}">#{{ . }}</a>
+			{{ end }}
+		</span>
+		  {{ end }}
+		</p>
+		<p><strong>Follow:</strong> <a href="https://micro.blog/leeperry?remote_follow=1">Mastodon</a> | <a href="https://bsky.app/profile/lee-perry.co.uk">Bluesky</a> | <a href="/subscribe/">Newsletter</a> | <a href="/feeds/">RSS</a> | <a rel="me" href="https://indieweb.social/@leeperry">🐘</a>
+		</p>
+	</div>
+</div>

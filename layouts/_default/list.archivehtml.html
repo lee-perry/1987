@@ -1,0 +1,28 @@
+{{ define "main" }}
+<header class="post-header">
+	<h2 class="post-title">All Articles</h2>
+</header>
+
+<div class="full-archives h-feed">
+	<div class="archive-container">
+	{{ $list := (where .Site.Pages "Type" "post") }}
+	{{ range $list }}
+	{{ if .Title }}
+		
+		<div class="archive-date"><span class="dt-published" datetime="{{ .Date.Format "2006-01-02T15:04:05-0700" }}">{{ .Date.Format "02 Jan 2006" }}</span></div>
+		
+		<div class="archive-content">
+		<span class="p-name"><a href="{{ .Permalink }}" class="u-url">{{ .Title }}</a></span><span class="p-taxonomies">{{ if isset .Params "categories" }}    
+			  {{ range .Params.categories }}{{ $href := print (absURL "categories/") (urlize .) }}
+			<a href="{{ $href }}" class="u-url date">#{{ . }}</a> {{ end }}
+			{{ else }}
+			{{ end }} </span>
+		</div>
+
+		<span class="p-summary"></span>
+
+	{{ end }}
+	{{ end }}
+	</div>
+</div>
+{{ end }}

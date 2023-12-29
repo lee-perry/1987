@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{{ partial "head.html" . }}
+
+<body>
+	{{ partial "navigation.html" . }}
+	{{ if .IsHome }}
+	 {{ partial "header.html" . }}
+	{{ else }}
+	 {{ partial "hero.html" . }}
+    {{ end }}
+  <div class="body-container">
+	  {{ block "main" . }}{{ end }}
+  </div>
+  {{ partial "footer.html" . }}
+  {{ partial "copyright.html" . }}
+  
+  {{ range .Site.Params.plugins_js }}
+  <script src="{{ . }}"></script>
+  {{ end }}
+</body>
+
+</html>

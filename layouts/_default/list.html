@@ -1,0 +1,81 @@
+{{ define "main" }}
+<header class="post-header">
+	<h2 class="post-title">All {{ .Title }} Posts</h2>
+</header>
+<div class="home h-feed">
+	
+	{{  if eq .Title "bayLee" }}	
+		{{ partial "list-expanded.html" . }}
+		
+	{{  else if eq .Title "Bouldering" }}	
+		{{ partial "list-expanded.html" . }}
+	
+	{{  else if eq .Title "Buster" }}	
+		{{ partial "list-expanded.html" . }}
+	
+	{{  else if eq .Title "Burnley FC" }}	
+		{{ partial "list-expanded.html" . }}
+	
+	{{  else if eq .Title "Cycling" }}	
+		{{ partial "list-expanded.html" . }}
+	
+	{{  else if eq .Title "Canine Children" }}	
+		{{ partial "list-expanded.html" . }}
+	
+	{{  else if eq .Title "Caoimhe" }}	
+		{{ partial "list-expanded.html" . }}
+	
+	{{  else if eq .Title "Exploring" }}	
+		{{ partial "list-expanded.html" . }}
+		
+	{{  else if eq .Title "Facebook Archive" }}	
+		{{ partial "list-expanded.html" . }}
+		
+	{{  else if eq .Title "Fearghus" }}	
+		{{ partial "list-expanded.html" . }}
+	
+	{{  else if eq .Title "Gym" }}	
+		{{ partial "list-expanded.html" . }}
+	
+	{{  else if eq .Title "Leo" }}	
+		{{ partial "list-expanded.html" . }}
+	
+	{{  else if eq .Title "Me" }}	
+		{{ partial "list-expanded.html" . }}
+		
+	{{  else if eq .Title "Music" }}	
+		{{ partial "list-expanded.html" . }}
+	
+	{{  else if eq .Title "Mustang" }}	
+		{{ partial "list-expanded.html" . }}
+	
+	{{  else if eq .Title "Rocco" }}	
+		{{ partial "list-expanded.html" . }}
+	
+	{{  else if eq .Title "Running" }}	
+		{{ partial "list-expanded.html" . }}
+	
+	{{  else if eq .Title "Stevie" }}	
+		{{ partial "list-expanded.html" . }}
+		
+	{{  else if eq .Title "Steve McQueen" }}	
+		{{ partial "list-expanded.html" . }}
+	
+	{{  else if eq .Title "Snips" }}	
+		{{ partial "list-expanded.html" . }}
+	
+	{{  else if eq .Title "Vickie" }}	
+	{{ partial "list-expanded.html" . }}	
+	
+	{{  else if eq .Title "Video" }}	
+		{{ partial "list-expanded.html" . }}
+	
+	{{ else }}
+		{{ partial "list-titles.html" . }}
+	{{ end }}
+	
+	
+	
+</div>
+
+{{ end }}
