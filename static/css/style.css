@@ -1,7 +1,7 @@
 :root {
 	--background-color: white;
 	--background-banner: #630C2B;
-	--background-footer:#ccc;
+	--background-footer:#cccccc;
 	--background-copyright:#98DAF6;
 	--text: #222222;
 	--text-alt: #666666;
@@ -29,7 +29,7 @@
 html {
 	background-color: var(--background-color);
 	color:var(--text);
-	font-family: Seravek, 'Gill Sans Nova', Ubuntu, Calibri, 'DejaVu Sans', source-sans-pro, sans-serif;;
+	font-family: Seravek, 'Gill Sans Nova', Ubuntu, Calibri, 'DejaVu Sans', source-sans-pro, sans-serif;
 	margin: 0;
 	padding: 0;
 	font-size: 1.1em;
@@ -114,6 +114,7 @@ a:hover {
 	overflow: hidden;
 	margin-top: 0px;
 	margin-bottom: 0px;
+	margin-left:0px;
 	padding:20px 10px;
 	top: 0px;
 	text-transform: uppercase;
